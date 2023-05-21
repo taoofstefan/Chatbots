@@ -1,0 +1,391 @@
+[import](common.lg)
+
+# SendActivity_pGr531_text()
+- Let's get started.
+# SendActivity_pGr531()
+[Activity
+    Text = ${SendActivity_pGr531_text()}
+]
+
+# Ask_Activity_O7LnLq()
+[Activity
+    Text = ${Ask_Activity_O7LnLq_text()}
+]
+
+# Ask_Activity_O7LnLq_text()
+- What's your name?
+# TextInput_Prompt_wii66V()
+[Activity
+    Text = ${TextInput_Prompt_wii66V_text()}
+]
+
+# TextInput_Prompt_wii66V_text()
+- What is your name?
+- Let's start with your name.
+- What is your first and last name?
+- For whom is this reservation?
+# TextInput_UnrecognizedPrompt_wii66V()
+[Activity
+    Text = ${TextInput_UnrecognizedPrompt_wii66V_text()}
+]
+
+# TextInput_UnrecognizedPrompt_wii66V_text()
+- Sorry, please try the format FirstName LastName
+# SendActivity_41pl8j()
+- Hello ${dialog.name}
+- Welcome ${dialog.name}
+- Greetings ${dialog.name}
+# SendActivity_JrvB3v()
+[Activity
+    Text = ${SendActivity_JrvB3v_text()}
+]
+
+# SendActivity_JrvB3v_text()
+- I will guide you through the reservation process.
+# TextInput_Prompt_hDiuFJ()
+[Activity
+    Text = ${TextInput_Prompt_hDiuFJ_text()}
+]
+
+# TextInput_Prompt_hDiuFJ_text()
+- What is the name of your street and number?
+# TextInput_Prompt_BYiBYS()
+[Activity
+    Text = ${TextInput_Prompt_BYiBYS_text()}
+]
+
+# TextInput_Prompt_BYiBYS_text()
+- In which city do you live?
+# DateTimeInput_Prompt_kdMzuf()
+[Activity
+    Text = ${DateTimeInput_Prompt_kdMzuf_text()}
+]
+
+# DateTimeInput_Prompt_kdMzuf_text()
+- When will you arrive
+# DateTimeInput_InvalidPrompt_kdMzuf()
+[Activity
+    Text = ${DateTimeInput_InvalidPrompt_kdMzuf_text()}
+]
+
+# DateTimeInput_InvalidPrompt_kdMzuf_text()
+- Sorry, the earliest check-in date is tomorrow. Please chose a different date.
+# NumberInput_Prompt_JNgI9I()
+[Activity
+    Text = ${NumberInput_Prompt_JNgI9I_text()}
+]
+
+# NumberInput_Prompt_JNgI9I_text()
+- Up to two guests can stay in one of our rooms.
+# SendActivity_dheJVz()
+[Activity
+    Text = ${SendActivity_dheJVz_text()}
+]
+
+# SendActivity_dheJVz_text()
+- Check-in date:  ${formatDateTime(dialog.checkin, 'dd-MM-yyyy', 'de-DE')}
+# SendActivity_6rcuS1()
+[Activity
+    Text = ${SendActivity_6rcuS1_text()}
+]
+
+# SendActivity_6rcuS1_text()
+- Check-out date: Check-in date:  ${formatDateTime(dialog.checkout, 'dd-MM-yyyy', 'de-DE')}
+# TextInput_InvalidPrompt_wii66V()
+[Activity
+    Text = ${TextInput_InvalidPrompt_wii66V_text()}
+]
+
+# TextInput_InvalidPrompt_wii66V_text()
+- I did not understand your input. Please try the following format: Firstname Lastname
+# SendActivity_AXDzGr()
+[Activity
+    Text = ${SendActivity_AXDzGr_text()}
+]
+
+# SendActivity_AXDzGr_text()
+- Now we're going to gather some details about your address.
+# SendActivity_MHkQ5H()
+[Activity
+    Text = ${SendActivity_MHkQ5H_text()}
+]
+
+# SendActivity_MHkQ5H_text()
+- That's done. Next we'll get into the details about your stay.
+# SendActivity_QctgKL()
+[Activity
+    Text = ${SendActivity_QctgKL_text()}
+]
+
+# SendActivity_QctgKL_text()
+- How many guests will stay at our hotel?
+# SendActivity_hkMUTJ()
+[Activity
+    Text = ${SendActivity_hkMUTJ_text()}
+]
+
+# SendActivity_hkMUTJ_text()
+- Hotel Westminster Pier has 3 tiers of rooms per guest.
+# ChoiceInput_Prompt_tzrWZ7()
+[Activity
+    Text = ${ChoiceInput_Prompt_tzrWZ7_text()}
+]
+
+# ChoiceInput_Prompt_tzrWZ7_text()
+- Which one do you want to book?
+# SendActivity_iC6wj1()
+[Activity
+    Text = ${SendActivity_iC6wj1_text()}
+]
+
+# SendActivity_iC6wj1_text()
+- We don't serve breakfast by default.
+# SendActivity_gwZQSL()
+[Activity
+    Text = ${SendActivity_gwZQSL_text()}
+]
+
+# SendActivity_gwZQSL_text()
+- For an additional 15 GBP per night and person, you can book breakfast.
+# ConfirmInput_Prompt_PN468a()
+[Activity
+    Text = ${ConfirmInput_Prompt_PN468a_text()}
+]
+
+# ConfirmInput_Prompt_PN468a_text()
+- Are you on a business trip?
+- Is your stay a business trip?
+- Are you staying with us for a business trip?
+- Are you in London for business?
+# SendActivity_nqOBLk()
+[Activity
+    Text = ${SendActivity_nqOBLk_text()}
+]
+
+# SendActivity_nqOBLk_text()
+- Do you want an early check-in?
+- Do you need to check-in early?
+# ConfirmInput_Prompt_x6zJsv()
+[Activity
+    Text = ${ConfirmInput_Prompt_x6zJsv_text()}
+]
+
+# ConfirmInput_Prompt_x6zJsv_text()
+- This costs an additonal 15 GBP
+# ConfirmInput_Prompt_0jvZXG()
+[Activity
+    Text = ${ConfirmInput_Prompt_0jvZXG_text()}
+]
+
+# ConfirmInput_Prompt_0jvZXG_text()
+- Do you want to book breakfast?
+# SendActivity_ghol2J()
+[Activity
+    Text = ${SendActivity_ghol2J_text()}
+]
+
+# SendActivity_ghol2J_text()
+- Breakfast: ${if(dialog.breakfast == True, "Yes", "No")}
+# SendActivity_UMmDXv()
+[Activity
+    Text = ${SendActivity_UMmDXv_text()}
+]
+
+# SendActivity_UMmDXv_text()
+- Business trip: ${if(dialog.business == True, "Yes", "No")}
+# SendActivity_vRMlbB()
+[Activity
+    Text = ${SendActivity_vRMlbB_text()}
+]
+
+# SendActivity_vRMlbB_text()
+- Early check-in: ${if(dialog.early== True, "Yes", "No")}
+# SendActivity_7wR2Hh()
+[Activity
+    Text = ${SendActivity_7wR2Hh_text()}
+]
+
+# SendActivity_7wR2Hh_text()
+- Do you need a late check-out?
+# SendActivity_Nxv0s4()
+[Activity
+    Text = ${SendActivity_Nxv0s4_text()}
+]
+
+# SendActivity_Nxv0s4_text()
+- 12 p.m. instead of 2 p.m. 
+# SendActivity_YhEo98()
+[Activity
+    Text = ${SendActivity_YhEo98_text()}
+]
+
+# SendActivity_YhEo98_text()
+- 1 p.m. instead of 11 a.m.
+# ConfirmInput_Prompt_Ozko9p()
+[Activity
+    Text = ${ConfirmInput_Prompt_Ozko9p_text()}
+]
+
+# ConfirmInput_Prompt_Ozko9p_text()
+- This costs an additional 15 GBP
+# SendActivity_jbbQD4()
+[Activity
+    Text = ${SendActivity_jbbQD4_text()}
+]
+
+# SendActivity_jbbQD4_text()
+- Late check-out: ${if(dialog.late == True, "Yes", "No")}
+# SendActivity_APij0Z()
+[Activity
+    Text = ${SendActivity_APij0Z_text()}
+]
+
+# SendActivity_APij0Z_text()
+- We offer limited pickup service an additional
+# SendActivity_boJSxN()
+[Activity
+    Text = ${SendActivity_boJSxN_text()}
+]
+
+# SendActivity_boJSxN_text()
+- For 25 GBP we can pick you up at King's Cross Station or Victoria Station
+# SendActivity_WRDM9t()
+[Activity
+    Text = ${SendActivity_WRDM9t_text()}
+]
+
+# SendActivity_WRDM9t_text()
+- For 35 GBP we can pick you up at London City Airport
+# ConfirmInput_Prompt_7DooBF()
+[Activity
+    Text = ${ConfirmInput_Prompt_7DooBF_text()}
+]
+
+# ConfirmInput_Prompt_7DooBF_text()
+- Do you want to book a pick-up service?
+# DateTimeInput_Prompt_yv8n3m()
+[Activity
+    Text = ${DateTimeInput_Prompt_yv8n3m_text()}
+]
+
+# DateTimeInput_Prompt_yv8n3m_text()
+- At what time on ${formatDateTime(dialog.checkin, 'dd-MM-yyyy', 'de-DE')} do you need to be picked up?
+# SendActivity_A10Tt2()
+[Activity
+    Text = ${SendActivity_A10Tt2_text()}
+]
+
+# SendActivity_A10Tt2_text()
+- The easiest way to get to Hotel Westminster Pier is by tax or underground.
+# SendActivity_8x6mil()
+[Activity
+    Text = ${SendActivity_8x6mil_text()}
+]
+
+# SendActivity_8x6mil_text()
+- If you come by underground, follow the circle or district line to the stop "Westminster"
+# SendActivity_I3lSci()
+[Activity
+    Text = ${SendActivity_I3lSci_text()}
+]
+
+# SendActivity_I3lSci_text()
+- ```***BOOKING CONFIRMATION***
+***THIS IS A FAKE HOTEL***
+***CONFIRMATION FOR DEMO PURPOSES ONLY***
+
+Reservation for **${dialog.name}**, living at **${dialog.street}** in **${dialog.city}**
+
+Email: **${dialog.email}**
+
+Check\-in date: **${formatDateTime(dialog.checkin, 'dd\-MM\-yyyy', '')}**
+Check\-out date: **${formatDateTime(dialog.checkout, 'dd\-MM\-yyyy', '')}**
+for a total of **${dialog.nights}** night(s), a total of **${dialog.guests}** guests and **${add(div(dialog.guests, 2), mod(dialog.guests, 2))}** room(s).
+
+You chose the **${dialog.roomname}** room category with the following specifications:
+Early check\-in: **${if(dialog.early == True, 'Yes', 'No')}** / **GBP ${dialog.earlyprice}**
+Late check\-out: **${if(dialog.late == True, 'Yes', 'No')}** / **GBP ${dialog.lateprice}**
+Business trip: **${if(dialog.business == True, 'Yes', 'No')}**
+Breakfast: **${if(dialog.breakfast == True, 'Yes', 'No')}** / **GBP ${dialog.breakfastprice}**
+
+You requested a pickup: **${if(dialog.pickup == True, 'Yes', 'No')}**
+at **${if(dialog.pickup == True, dialog.pickuplocation, 'NA')}** / **${if(dialog.pickup == True, dialog.pickupprice, 'NA')} GBP**
+on **${if(dialog.pickup == True, formatDateTime(dialog.checkin, 'dd\-MM\-yyyy',  ''), 'NA')}**
+at **${if(dialog.pickup == True, formatDateTime(dialog.pickuptime, 'HH:mm', ''), 'NA')}**.
+You have the following additional request:
+**${if(empty(dialog.request), '**N/A**', dialog.request)}**
+
+On check\-out you have to pay indicatively a total of **GBP ${add(add(dialog.earlyprice, dialog.lateprice), add(dialog.pickupprice, mul(mul(add(dialog.roomprice, dialog.breakfastprice), dialog.nights), dialog.totrooms)))}**```
+# SendActivity_xWu7LA()
+[Activity
+    Text = ${SendActivity_xWu7LA_text()}
+]
+
+# SendActivity_xWu7LA_text()
+- Number of nights: ${dialog.nights}
+# DateTimeInput_Prompt_tesoTy()
+[Activity
+    Text = ${DateTimeInput_Prompt_tesoTy_text()}
+]
+
+# DateTimeInput_Prompt_tesoTy_text()
+- When do you want to check out?
+- What is your check-out date?
+# ConfirmInput_Prompt_YJppd6()
+[Activity
+    Text = ${ConfirmInput_Prompt_YJppd6_text()}
+]
+
+# ConfirmInput_Prompt_YJppd6_text()
+- Do you have any additonal requests or comments?
+# TextInput_Prompt_EkuF4k()
+[Activity
+    Text = ${TextInput_Prompt_EkuF4k_text()}
+]
+
+# TextInput_Prompt_EkuF4k_text()
+- Plesase share your request or comment.
+# ChoiceInput_Prompt_cDZMsR()
+[Activity
+    Text = ${ChoiceInput_Prompt_cDZMsR_text()}
+]
+
+# ChoiceInput_Prompt_cDZMsR_text()
+- Where can we pick ou up?
+# TextInput_InvalidPrompt_9gVgUN()
+-
+# TextInput_Prompt_85io4j()
+[Activity
+    Text = ${TextInput_Prompt_85io4j_text()}
+]
+
+# TextInput_Prompt_85io4j_text()
+- What is your email address?
+# TextInput_InvalidPrompt_85io4j()
+[Activity
+    Text = ${TextInput_InvalidPrompt_85io4j_text()}
+]
+
+# TextInput_InvalidPrompt_85io4j_text()
+- Please try this format: test@example.co.uk
+# TextInput_InvalidPrompt_hDiuFJ()
+[Activity
+    Text = ${TextInput_InvalidPrompt_hDiuFJ_text()}
+]
+
+# TextInput_InvalidPrompt_hDiuFJ_text()
+- Please try the format *Street Name 5*
+# NumberInput_InvalidPrompt_JNgI9I()
+[Activity
+    Text = ${NumberInput_InvalidPrompt_JNgI9I_text()}
+]
+
+# NumberInput_InvalidPrompt_JNgI9I_text()
+- Your input has to be a number. Only up to 10 guests can be done per booking.
+# DateTimeInput_InvalidPrompt_tesoTy()
+[Activity
+    Text = ${DateTimeInput_InvalidPrompt_tesoTy_text()}
+]
+
+# DateTimeInput_InvalidPrompt_tesoTy_text()
+- Your check-out date has to be at least one day after your check-in date (${formatDateTime(dialog.checkin, 'dd-MM-yyyy', 'de-DE')}).

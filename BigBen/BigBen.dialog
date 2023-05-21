@@ -1,0 +1,469 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "name": "Big Ben",
+    "description": "",
+    "id": "A79tBe"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnConversationUpdateActivity",
+      "$designer": {
+        "id": "376720",
+        "comment": "This trigger runs when a conversation update activity is sent to the bot. This indicates a user or bot being added or removed from a conversation."
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.Bot.Components.SendAdaptiveCard",
+          "$designer": {
+            "id": "VJbUgh"
+          },
+          "template": {
+            "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+            "type": "AdaptiveCard",
+            "version": "1.3",
+            "body": [
+              {
+                "speak": "",
+                "type": "ColumnSet",
+                "columns": [
+                  {
+                    "type": "Column",
+                    "width": 2,
+                    "items": [
+                      {
+                        "type": "TextBlock",
+                        "wrap": true,
+                        "text": "Hotel Westminster Pier"
+                      },
+                      {
+                        "type": "TextBlock",
+                        "text": "Big Ben",
+                        "weight": "Bolder",
+                        "size": "ExtraLarge",
+                        "spacing": "None",
+                        "wrap": true
+                      },
+                      {
+                        "type": "TextBlock",
+                        "size": "Small",
+                        "wrap": true,
+                        "maxLines": 3,
+                        "text": "Hello, I am Big Ben, your chatbot assistant."
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Column",
+                    "width": 1,
+                    "items": [
+                      {
+                        "type": "Image",
+                        "url": "https://i.ibb.co/sR1DyjV/london-g263a71a1f-1920.png",
+                        "altText": "image of Big Ben"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "id": "518944",
+            "name": "Loop: for each item",
+            "comment": "For each member added to the conversation."
+          },
+          "itemsProperty": "turn.Activity.membersAdded",
+          "actions": [
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "641773",
+                "name": "Branch: if/else",
+                "comment": "Checks that that member added ID does not match the bot ID. This prevents the greeting message from being sent when the bot is added to a conversation."
+              },
+              "condition": "=string(dialog.foreach.value.id) != string(turn.Activity.Recipient.id)",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "859266",
+                    "name": "Send a response"
+                  },
+                  "activity": "${SendActivity_Greeting()}"
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "WR3YL4"
+                  },
+                  "activity": "${SendActivity_WR3YL4()}"
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "Wcri3F"
+                  },
+                  "activity": "${SendActivity_Wcri3F()}"
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "8n2P7o"
+                  },
+                  "activity": "${SendActivity_8n2P7o()}"
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "Cj9bRc",
+                    "comment": ""
+                  },
+                  "activity": "${SendActivity_Cj9bRc()}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnUnknownIntent",
+      "$designer": {
+        "id": "mb2n1u",
+        "comment": "This trigger fires when an incoming activity is not handled by any other trigger."
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "kMjqz1",
+            "comment": "It is recommended to show a message to the user when the bot does not know how to handle an incoming activity and provide follow up options or a help message."
+          },
+          "activity": "${SendActivity_DidNotUnderstand()}"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "F9ENfN",
+        "name": "bookingIntent",
+        "comment": "This trigger fires when an incoming activity launches the Hotel room boking trigger."
+      },
+      "intent": "booking",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "idAli4"
+          },
+          "activityProcessed": true,
+          "dialog": "roomBooking"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "PNQDKn",
+        "name": "contactIntent",
+        "comment": "This trigger fires when an incoming activity launches the Hotel's contact details trigger."
+      },
+      "intent": "contact",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "THc1DE"
+          },
+          "activityProcessed": true,
+          "dialog": "contactDetails"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "Vhl4Ou",
+        "name": "cancelIntent"
+      },
+      "intent": "cancelIntent",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "J1VRG8"
+          },
+          "activity": "${SendActivity_J1VRG8()}"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "jknkh6"
+          },
+          "activityProcessed": true,
+          "dialog": "contactDetails"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "phFZSZ",
+        "name": "pricingIntent"
+      },
+      "intent": "pricingIntent",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "wZ13Jd"
+          },
+          "activity": "${SendActivity_wZ13Jd()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "xLmvQ5"
+          },
+          "activity": "${SendActivity_xLmvQ5()}"
+        },
+        {
+          "$kind": "Microsoft.ConfirmInput",
+          "$designer": {
+            "id": "WZgUPq"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "prompt": "${ConfirmInput_Prompt_WZgUPq()}",
+          "choiceOptions": {
+            "includeNumbers": true
+          },
+          "property": "user.confirm"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "rQYeA4"
+          },
+          "condition": "=user.confirm == true",
+          "actions": [
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "1GkkJx"
+              },
+              "activityProcessed": true,
+              "dialog": "roomBooking"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "2QyNKG"
+              },
+              "activityProcessed": true,
+              "dialog": "contactDetails"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "58QfB7",
+        "name": "humanAgentIntent"
+      },
+      "intent": "humanAgentIntent",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "UZsv81"
+          },
+          "activity": "${SendActivity_UZsv81()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "3IgXFE"
+          },
+          "activity": "${SendActivity_3IgXFE()}"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "d0FbEG"
+          },
+          "activityProcessed": true,
+          "dialog": "contactDetails"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "n88Bzo",
+        "name": "subwayInent"
+      },
+      "intent": "subwayInent",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "j9fDjK"
+          },
+          "activity": "${SendActivity_j9fDjK()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "dFmbka"
+          },
+          "activity": "${SendActivity_dFmbka()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "6YfVSe"
+          },
+          "activity": "${SendActivity_6YfVSe()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "cpdzTa"
+          },
+          "activity": "${SendActivity_cpdzTa()}"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "cAnuLj",
+        "name": "parkingIntent"
+      },
+      "intent": "parkingIntent",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "mRw8vr"
+          },
+          "activity": "${SendActivity_mRw8vr()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "jEgNJs"
+          },
+          "activity": "${SendActivity_jEgNJs()}"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "Am1sAf",
+        "name": "infantIntent"
+      },
+      "intent": "infantIntent",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "rtxgK5"
+          },
+          "activity": "${SendActivity_rtxgK5()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "D688Hf"
+          },
+          "activity": "${SendActivity_D688Hf()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "z2Gfav"
+          },
+          "activity": "${SendActivity_z2Gfav()}"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "qkP6uN",
+        "name": "disabledIntent"
+      },
+      "intent": "disabledIntent",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "2qml7z"
+          },
+          "activity": "${SendActivity_2qml7z()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "iFwJHk"
+          },
+          "activity": "${SendActivity_iFwJHk()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "TkQbEK"
+          },
+          "activity": "${SendActivity_TkQbEK()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "cKpmUF"
+          },
+          "activity": "${SendActivity_cKpmUF()}"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "YnFNTt",
+        "name": "petsIntent"
+      },
+      "intent": "petsIntent",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "gqH2bT"
+          },
+          "activity": "${SendActivity_gqH2bT()}"
+        }
+      ]
+    }
+  ],
+  "generator": "BigBen.lg",
+  "id": "BigBen",
+  "recognizer": "BigBen.lu.qna"
+}

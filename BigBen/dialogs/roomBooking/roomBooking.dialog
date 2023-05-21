@@ -1,0 +1,742 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "JVMH9l",
+    "name": "bookRoom",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "GKWY6L"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "JrvB3v"
+          },
+          "activity": "${SendActivity_JrvB3v()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "pGr531"
+          },
+          "activity": "${SendActivity_pGr531()}"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "wii66V"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "${TextInput_UnrecognizedPrompt_wii66V()}",
+          "prompt": "${TextInput_Prompt_wii66V()}",
+          "property": "dialog.name",
+          "validations": [
+            "=length(this.value) > 5",
+            "=isString(this.value) == true",
+            "=contains(this.value, \" \")"
+          ],
+          "invalidPrompt": "${TextInput_InvalidPrompt_wii66V()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "41pl8j"
+          },
+          "activity": "${SendActivity_41pl8j()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "AXDzGr"
+          },
+          "activity": "${SendActivity_AXDzGr()}"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "hDiuFJ"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "${TextInput_InvalidPrompt_hDiuFJ()}",
+          "prompt": "${TextInput_Prompt_hDiuFJ()}",
+          "property": "dialog.street",
+          "validations": [
+            "=length(this.value) > 5",
+            "contains(this.value, \" \")"
+          ]
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "BYiBYS"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_BYiBYS()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "validations": [
+            "=length(this.value) > 0"
+          ],
+          "property": "dialog.city"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "85io4j"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_85io4j()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "${TextInput_InvalidPrompt_85io4j()}",
+          "property": "dialog.email",
+          "validations": [
+            "=contains(this.value, '@')",
+            "=contains(this.value, '.')",
+            "=length(this.value) > 5",
+            "=not(contains(this.value, ' '))"
+          ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "MHkQ5H"
+          },
+          "activity": "${SendActivity_MHkQ5H()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "QctgKL"
+          },
+          "activity": "${SendActivity_QctgKL()}"
+        },
+        {
+          "$kind": "Microsoft.NumberInput",
+          "$designer": {
+            "id": "JNgI9I"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${NumberInput_Prompt_JNgI9I()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "${NumberInput_InvalidPrompt_JNgI9I()}",
+          "property": "dialog.guests",
+          "validations": [
+            "=this.value > 0",
+            "=this.value < 10"
+          ]
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "ZIQQJM"
+          },
+          "property": "dialog.totrooms",
+          "value": "=int(add(div(dialog.guests, 2), mod(dialog.guests, 2)))"
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "O0n6gF"
+          },
+          "property": "dialog.today",
+          "value": "=utcNow('yyyy-MM-ddTHH:mm:ss.fffZ', 'de-DE')"
+        },
+        {
+          "$kind": "Microsoft.DateTimeInput",
+          "$designer": {
+            "id": "kdMzuf"
+          },
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "invalidPrompt": "${DateTimeInput_InvalidPrompt_kdMzuf()}",
+          "prompt": "${DateTimeInput_Prompt_kdMzuf()}",
+          "validations": [
+            "=ticksToDays(dateTimeDiff(this.value, dialog.today)) > 0"
+          ],
+          "property": "dialog.checkin",
+          "outputFormat": "=formatDateTime(this.value[0].Value, 'yyyy-MM-ddTHH:mm:ss.fffZ', 'de-DE')"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "dheJVz"
+          },
+          "activity": "${SendActivity_dheJVz()}"
+        },
+        {
+          "$kind": "Microsoft.DateTimeInput",
+          "$designer": {
+            "id": "tesoTy"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${DateTimeInput_Prompt_tesoTy()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "${DateTimeInput_InvalidPrompt_tesoTy()}",
+          "property": "dialog.checkout",
+          "outputFormat": "=formatDateTime(this.value[0].Value, 'yyyy-MM-ddTHH:mm:ss.fffZ', 'de-DE')",
+          "validations": [
+            "=ticksToDays(dateTimeDiff(this.value, dialog.checkin)) > 0"
+          ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "6rcuS1"
+          },
+          "activity": "${SendActivity_6rcuS1()}"
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "vGmB3y"
+          },
+          "property": "dialog.nights",
+          "value": "=ticksToDays(dateTimeDiff(dialog.checkout, dialog.checkin))"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "xWu7LA"
+          },
+          "activity": "${SendActivity_xWu7LA()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "hkMUTJ"
+          },
+          "activity": "${SendActivity_hkMUTJ()}"
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "tzrWZ7"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "prompt": "${ChoiceInput_Prompt_tzrWZ7()}",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "style": "heroCard",
+          "property": "dialog.roomtype",
+          "recognizerOptions": {
+            "recognizeOrdinals": true,
+            "recognizeNumbers": true
+          },
+          "choices": [
+            {
+              "value": "COMFORT (50 GBP / night)",
+              "synonyms": [
+                "comfort",
+                "50"
+              ]
+            },
+            {
+              "value": "PREMIUM (75 GBP / night)",
+              "synonyms": [
+                "premium",
+                "75"
+              ]
+            },
+            {
+              "value": "DELUXE (100 GBP / night)",
+              "synonyms": [
+                "deluxe",
+                "100"
+              ]
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "ybmcVW"
+          },
+          "property": "dialog.roomname",
+          "value": "=if(dialog.roomtype == 'COMFORT (50 GBP / night)', 'COMFORT', if(dialog.roomtype == 'PREMIUM (75 GBP / night)', 'PREMIUM', 'DELUXE'))"
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "BRrYJN"
+          },
+          "value": "=int(if(dialog.roomtype == 'COMFORT (50 GBP / night)', '50', if(dialog.roomtype == 'PREMIUM (75 GBP / night)', '75', '100')))",
+          "property": "dialog.roomprice"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "iC6wj1"
+          },
+          "activity": "${SendActivity_iC6wj1()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "gwZQSL"
+          },
+          "activity": "${SendActivity_gwZQSL()}"
+        },
+        {
+          "$kind": "Microsoft.ConfirmInput",
+          "$designer": {
+            "id": "0jvZXG"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "confirmChoices": [
+            "Yes",
+            "No"
+          ],
+          "property": "dialog.breakfast",
+          "style": "heroCard",
+          "prompt": "${ConfirmInput_Prompt_0jvZXG()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "ghol2J"
+          },
+          "activity": "${SendActivity_ghol2J()}"
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "Tw8mSM"
+          },
+          "property": "dialog.breakfastprice",
+          "value": "=int(if(dialog.breakfast == true, '15', '0'))"
+        },
+        {
+          "$kind": "Microsoft.ConfirmInput",
+          "$designer": {
+            "id": "PN468a"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "prompt": "${ConfirmInput_Prompt_PN468a()}",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or "
+          },
+          "property": "dialog.business",
+          "style": "heroCard"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "UMmDXv"
+          },
+          "activity": "${SendActivity_UMmDXv()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "nqOBLk"
+          },
+          "activity": "${SendActivity_nqOBLk()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "Nxv0s4"
+          },
+          "activity": "${SendActivity_Nxv0s4()}"
+        },
+        {
+          "$kind": "Microsoft.ConfirmInput",
+          "$designer": {
+            "id": "x6zJsv"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ConfirmInput_Prompt_x6zJsv()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or "
+          },
+          "property": "dialog.early"
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "v9SeKM"
+          },
+          "property": "dialog.earlyprice",
+          "value": "=int(if(dialog.early == true, '15', '0'))"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "vRMlbB"
+          },
+          "activity": "${SendActivity_vRMlbB()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "7wR2Hh"
+          },
+          "activity": "${SendActivity_7wR2Hh()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "YhEo98"
+          },
+          "activity": "${SendActivity_YhEo98()}"
+        },
+        {
+          "$kind": "Microsoft.ConfirmInput",
+          "$designer": {
+            "id": "Ozko9p"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ConfirmInput_Prompt_Ozko9p()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or "
+          },
+          "style": "heroCard",
+          "confirmChoices": [
+            "Yes",
+            "No"
+          ],
+          "property": "dialog.late"
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "hXJej8"
+          },
+          "property": "dialog.lateprice",
+          "value": "=int(if(dialog.late == true, '15', '0'))"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "jbbQD4"
+          },
+          "activity": "${SendActivity_jbbQD4()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "APij0Z"
+          },
+          "activity": "${SendActivity_APij0Z()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "boJSxN"
+          },
+          "activity": "${SendActivity_boJSxN()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "WRDM9t"
+          },
+          "activity": "${SendActivity_WRDM9t()}"
+        },
+        {
+          "$kind": "Microsoft.ConfirmInput",
+          "$designer": {
+            "id": "7DooBF"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ConfirmInput_Prompt_7DooBF()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "property": "dialog.pickup",
+          "style": "heroCard",
+          "confirmChoices": [
+            "Yes",
+            "No"
+          ]
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "FL8XeI"
+          },
+          "condition": "=dialog.pickup",
+          "cases": [
+            {
+              "actions": [
+                {
+                  "$kind": "Microsoft.ChoiceInput",
+                  "$designer": {
+                    "id": "cDZMsR"
+                  },
+                  "defaultLocale": "en-us",
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": false,
+                  "allowInterruptions": false,
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "defaultValueResponse": "",
+                  "prompt": "${ChoiceInput_Prompt_cDZMsR()}",
+                  "choiceOptions": {
+                    "includeNumbers": true,
+                    "inlineOrMore": ", or ",
+                    "inlineOr": " or ",
+                    "inlineSeparator": ", "
+                  },
+                  "style": "heroCard",
+                  "property": "dialog.pickuplocation",
+                  "choices": [
+                    {
+                      "value": "King's Cross",
+                      "synonyms": [
+                        "king",
+                        "k",
+                        "kc",
+                        "kings cross",
+                        "kings",
+                        "cross",
+                        "harry potter",
+                        "harry potter station"
+                      ]
+                    },
+                    {
+                      "value": "Victoria Station",
+                      "synonyms": [
+                        "victoria",
+                        "v",
+                        "vic",
+                        "vs",
+                        "station",
+                        "victoria",
+                        "queen",
+                        "queen victoria",
+                        "viktoria"
+                      ]
+                    },
+                    {
+                      "value": "London City Airport",
+                      "synonyms": [
+                        "airport",
+                        "port",
+                        "LCY",
+                        "EGLC",
+                        "lca",
+                        "city airport"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "$kind": "Microsoft.SetProperty",
+                  "$designer": {
+                    "id": "M2jh6c"
+                  },
+                  "property": "dialog.pickupprice",
+                  "value": "=int(if(dialog.pickuplocation == 'London City Airport', '35', '25'))"
+                },
+                {
+                  "$kind": "Microsoft.DateTimeInput",
+                  "$designer": {
+                    "id": "yv8n3m"
+                  },
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": false,
+                  "allowInterruptions": false,
+                  "prompt": "${DateTimeInput_Prompt_yv8n3m()}",
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "defaultValueResponse": "",
+                  "property": "dialog.pickuptime",
+                  "outputFormat": "=this.value[0].Value"
+                }
+              ],
+              "value": true
+            },
+            {
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "A10Tt2"
+                  },
+                  "activity": "${SendActivity_A10Tt2()}"
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "8x6mil"
+                  },
+                  "activity": "${SendActivity_8x6mil()}"
+                },
+                {
+                  "$kind": "Microsoft.SetProperty",
+                  "$designer": {
+                    "id": "srCuBU"
+                  },
+                  "property": "dialog.pickupprice",
+                  "value": "=int(0)"
+                }
+              ],
+              "value": false
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.ConfirmInput",
+          "$designer": {
+            "id": "YJppd6"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "prompt": "${ConfirmInput_Prompt_YJppd6()}",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or "
+          },
+          "property": "dialog.requestconfirmation"
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "YelUQA"
+          },
+          "condition": "=dialog.requestconfirmation",
+          "cases": [
+            {
+              "value": "true",
+              "actions": [
+                {
+                  "$kind": "Microsoft.TextInput",
+                  "$designer": {
+                    "id": "EkuF4k"
+                  },
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": false,
+                  "allowInterruptions": false,
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "defaultValueResponse": "",
+                  "prompt": "${TextInput_Prompt_EkuF4k()}",
+                  "property": "dialog.request"
+                }
+              ]
+            },
+            {
+              "value": "false"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "I3lSci"
+          },
+          "activity": "${SendActivity_I3lSci()}"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "1wWOgl"
+          },
+          "activityProcessed": true,
+          "dialog": "contactDetails"
+        }
+      ]
+    }
+  ],
+  "generator": "roomBooking.lg",
+  "recognizer": "roomBooking.lu.qna",
+  "id": "bookRoom"
+}

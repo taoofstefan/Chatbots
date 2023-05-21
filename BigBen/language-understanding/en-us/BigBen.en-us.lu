@@ -1,0 +1,129 @@
+# booking
+> add some example phrases to trigger this intent:
+- please start a booking
+- I want to book a room
+- booking
+- I want a room reservation
+- reservation
+- I need a room
+- I need a reservation
+- We need a place to stay in London
+- I am looking for an alternative to AirBnB
+- accommodations in London, please
+- I'd like to make reservations for a business suite
+# contact
+> some example phrases to trigger this intent:
+- contact details
+- contact
+- how can I contact you
+- how can I reach the hotel
+- what is your email
+- what is your email address
+- how can I call the hotel
+- how can I call you
+- what is your address
+- hotel address
+- front desk
+- reception
+- where can I find a phone number
+- do you have an email address for me
+- where exactly is this place located
+# cancelIntent
+- please cancel booking
+- cancel reservation
+- stop boooking
+- stop
+- cancel
+- abort
+- halt process
+- abort booking
+- I don't need the room anymore
+- I changed my mind
+- We decided to stay at another hotel, sorry
+- I won't need a room in London
+- My business trip has been postponed
+# pricingIntent
+> add some example phrases to trigger this intent:
+- how much is a room?
+- what does a night cost?
+- what is the room price?
+- what is the price?
+- room price
+- night costs
+- are there any cheaper rooms available
+- how much per night 
+- do you offer discounts for long-term stays
+- how many euros for one weekend
+- how many pounds per room per night
+- are the rooms expensive
+- is th hotel cheaper
+- are the rooms cheaper
+- is the hotel expensive
+- do you have affordable rooms
+# humanAgentIntent
+> add some example phrases to trigger this intent:
+- I want to speak to a human
+- Please give me a person
+- no chatbot
+- hand me to the concierge
+- Give me a staff member
+- I need to speak to an employee
+- I want to chat with a clerk
+- could a receptionist answer my questions instead
+- I hate chatbots
+- I detest chatting with bots
+# subwayInent
+> add some example phrases to trigger this intent:
+- please tell me the closest subway station
+- what is the best subway station to get to the hotel
+- how can I travel by subway to arrive
+- can I travel by subway?
+- which subway can I use?
+- closest subway
+- closest subway station
+- nearest subway
+- undeground station
+- nearest underground
+- closest underground
+- which stop of the tube is closest
+- what is the best underground station to get to the hotel
+# parkingIntent
+> add some example phrases to trigger this intent:
+- Do you have car parking?
+- Can I park my car at the hotel?
+- can I travel with my car?
+- do you have a garage?
+- is car parking available?
+- are there parking spots at the hotel?
+- where can I leave my vehicle
+- do you have a secure garage for our Bentley
+# infantIntent
+> add some example phrases to trigger this intent:
+- do you have infant beds
+- bed for baby
+- baby crib
+- do you have a diaper changing table
+- can I have an extra baby crib
+- we will need baby beds
+- do you have family-friendly rooms
+- are your suites toddler-proof
+# disabledIntent
+> add some example phrases to trigger this intent:
+- is your hotel suitable for disabled people?
+- can I access the hotel with my wheelchair?
+- is your hotel disabled friendly?
+- handicap access
+- pyhsically handicappped
+- physically disabled
+- how barrier-free is your hotel 
+- are the rooms spacious enough for wheelchairs
+- how many steps from street level to the room
+
+# petsIntent
+> add some example phrases to trigger this intent:
+- are pets allowed
+- can I bring my pet
+- can my dog stay at the hotel
+- are my cats allowed in the hotel room
+- is it ok to bring my dogs
+- how animal-friendly is your hotel?

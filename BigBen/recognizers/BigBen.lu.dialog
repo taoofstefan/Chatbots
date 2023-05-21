@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_BigBen",
+  "recognizers": {
+    "en-us": "BigBen.en-us.lu",
+    "": "BigBen.en-us.lu"
+  }
+}

@@ -1,0 +1,189 @@
+[import](common.lg)
+
+# SendActivity_Greeting()
+[Activity
+    Text = ${SendActivity_Greeting_text()}
+]
+
+# SendActivity_Greeting_text()
+- Welcome I'm **Big Ben**, the hotel room reservation bot of Hotel Westminster Pier.
+- Hello, I'm **Big Ben** the hotel room reservation bot of Hotel Westminster Pier.
+- Greetings and hello! I'm **Big Ben** the hotel room reservation bot of Hotel Westminster Pier.
+- Good day! I'm **Big Ben** the hotel room reservation bot of Hotel Westminster Pier.
+# SendActivity_DidNotUnderstand()
+[Activity
+    Text = ${SendActivity_DidNotUnderstand_text()}
+]
+
+# SendActivity_DidNotUnderstand_text()
+- Sorry, I didn't get that.
+# SendActivity_WR3YL4()
+[Activity
+    Text = ${SendActivity_WR3YL4_text()}
+]
+
+# SendActivity_WR3YL4_text()
+- ***#####PLEASE NOTE#####***
+# SendActivity_Wcri3F()
+[Activity
+    Text = ${SendActivity_Wcri3F_text()}
+]
+
+# SendActivity_Wcri3F_text()
+- **This is only a demonstration of a fake hotel**
+# SendActivity_8n2P7o()
+[Activity
+    Text = ${SendActivity_8n2P7o_text()}
+]
+
+# SendActivity_8n2P7o_text()
+- **You won't be booking a real stay in London city, UK**
+# SendActivity_Cj9bRc()
+[Activity
+    Text = ${SendActivity_Cj9bRc_text()}
+]
+
+# SendActivity_Cj9bRc_text()
+- Try typing *I want to book a room* or *can I have your contact details please?*
+# SendActivity_J1VRG8()
+[Activity
+    Text = ${SendActivity_J1VRG8_text()}
+]
+
+# SendActivity_J1VRG8_text()
+- Thank you for your time.
+# SendActivity_wZ13Jd()
+[Activity
+    Text = ${SendActivity_wZ13Jd_text()}
+]
+
+# SendActivity_wZ13Jd_text()
+- We have 3 different tiers of rooms.
+# SendActivity_xLmvQ5()
+[Activity
+    Text = ${SendActivity_xLmvQ5_text()}
+]
+
+# SendActivity_xLmvQ5_text()
+- ```COMFORT (50 GBP / night)
+PREMIUM (75 GBP / night)
+DELUXE (100 GBP / night)```
+# ConfirmInput_Prompt_WZgUPq()
+[Activity
+    Text = ${ConfirmInput_Prompt_WZgUPq_text()}
+]
+
+# ConfirmInput_Prompt_WZgUPq_text()
+- Do you want to book a room?
+# SendActivity_UZsv81()
+[Activity
+    Text = ${SendActivity_UZsv81_text()}
+]
+
+# SendActivity_UZsv81_text()
+- We don't have any staff members on this chat.
+# SendActivity_3IgXFE()
+[Activity
+    Text = ${SendActivity_3IgXFE_text()}
+]
+
+# SendActivity_3IgXFE_text()
+- I will give you the hotel's contact details.
+# SendActivity_j9fDjK()
+[Activity
+    Text = ${SendActivity_j9fDjK_text()}
+]
+
+# SendActivity_j9fDjK_text()
+- Thank you for your question.
+# SendActivity_dFmbka()
+[Activity
+    Text = ${SendActivity_dFmbka_text()}
+]
+
+# SendActivity_dFmbka_text()
+- You can reach the hotel easily by subway.
+# SendActivity_6YfVSe()
+[Activity
+    Text = ${SendActivity_6YfVSe_text()}
+]
+
+# SendActivity_6YfVSe_text()
+- Please take either *Circle*, *Jubilee* or *District Line* and leave at the stop **Westminster**
+# SendActivity_cpdzTa()
+[Activity
+    Text = ${SendActivity_cpdzTa_text()}
+]
+
+# SendActivity_cpdzTa_text()
+- From there it is only a 5 minute walk to the hotel.
+# SendActivity_mRw8vr()
+[Activity
+    Text = ${SendActivity_mRw8vr_text()}
+]
+
+# SendActivity_mRw8vr_text()
+- There are no parking spots at the hotel.
+# SendActivity_jEgNJs()
+[Activity
+    Text = ${SendActivity_jEgNJs_text()}
+]
+
+# SendActivity_jEgNJs_text()
+- The public parking spots in the area are mostly for residents only.
+# SendActivity_rtxgK5()
+[Activity
+    Text = ${SendActivity_rtxgK5_text()}
+]
+
+# SendActivity_rtxgK5_text()
+- Children up to the age of 6 years can stay free of charge in our hotel.
+# SendActivity_D688Hf()
+[Activity
+    Text = ${SendActivity_D688Hf_text()}
+]
+
+# SendActivity_D688Hf_text()
+- On demand we can provide you with a baby crib or a portable diaper changing table (no extra charge).
+# SendActivity_z2Gfav()
+[Activity
+    Text = ${SendActivity_z2Gfav_text()}
+]
+
+# SendActivity_z2Gfav_text()
+- Please inform us about any children up to the age of 6 and any needed items via the comment section during the booking. Don't add them to the amount of guests when asked.
+# SendActivity_2qml7z()
+[Activity
+    Text = ${SendActivity_2qml7z_text()}
+]
+
+# SendActivity_2qml7z_text()
+- We pride ourselves to cater for all people.
+# SendActivity_iFwJHk()
+[Activity
+    Text = ${SendActivity_iFwJHk_text()}
+]
+
+# SendActivity_iFwJHk_text()
+- That is why our hotel entry is at ground level and has an easy wheelchair access.
+# SendActivity_TkQbEK()
+[Activity
+    Text = ${SendActivity_TkQbEK_text()}
+]
+
+# SendActivity_TkQbEK_text()
+- To get easily to your room, the hotel has elevators and rooms that are designed to move around with a wheelchair.
+# SendActivity_cKpmUF()
+[Activity
+    Text = ${SendActivity_cKpmUF_text()}
+]
+
+# SendActivity_cKpmUF_text()
+- Please indicate during the booking process in the comment section that you need a disabled friendly room.
+# SendActivity_gqH2bT()
+[Activity
+    Text = ${SendActivity_gqH2bT_text()}
+]
+
+# SendActivity_gqH2bT_text()
+- Unfortunately, there are no pets allowed at our hotel.

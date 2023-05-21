@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.MultiLanguageRecognizer",
+  "id": "LUIS_roomBooking",
+  "recognizers": {
+    "en-us": "roomBooking.en-us.lu",
+    "": "roomBooking.en-us.lu"
+  }
+}

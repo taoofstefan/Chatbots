@@ -1,0 +1,29 @@
+[import](common.lg)
+
+# SendActivity_ZpxgtH()
+[Activity
+    Text = ${SendActivity_ZpxgtH_text()}
+]
+
+# SendActivity_ZpxgtH_text()
+- Here are the contact details of Hotel Westminster Pier:
+# SendActivity_HMepFB()
+[Activity
+    Text = ${SendActivity_HMepFB_text()}
+]
+
+# SendActivity_HMepFB_text()
+- ```***Hotel Westminster Pier***
+**Address**:
+Westminster Pier, London SW1A 2JH, United Kingdom
+**Telephone**:
++442072191234
+**Email**:
+frontdesk@hotelwestminsterpier.co.uk```
+# SendActivity_CZraDj()
+[Activity
+    Text = ${SendActivity_CZraDj_text()}
+]
+
+# SendActivity_CZraDj_text()
+- Thank you for your time and staying with Hotel Westminster Pier.

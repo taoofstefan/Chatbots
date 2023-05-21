@@ -1,0 +1,36 @@
+{
+  "BigBen.en-us": {
+    "rootDialog": true,
+    "triggers": {
+      "booking": [
+        "roomBooking.en-us"
+      ],
+      "contact": [
+        "contactDetails.en-us"
+      ],
+      "cancelIntent": [
+        "contactDetails.en-us"
+      ],
+      "pricingIntent": [
+        "roomBooking.en-us",
+        "contactDetails.en-us"
+      ],
+      "humanAgentIntent": [
+        "contactDetails.en-us"
+      ],
+      "subwayInent": "",
+      "parkingIntent": "",
+      "infantIntent": "",
+      "disabledIntent": "",
+      "petsIntent": ""
+    }
+  },
+  "roomBooking.en-us": {
+    "rootDialog": false,
+    "triggers": {
+      "": [
+        "contactDetails.en-us"
+      ]
+    }
+  }
+}
