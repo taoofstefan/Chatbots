@@ -13,9 +13,13 @@ Feel free to raise any problems.
 
 ## Installation Guide
 To test the bot either via the integrated Web Chat or the emulator the following SDKs and programs need to be installed:
+
 • Bot Framework Composer (required): https://docs.microsoft.com/en-us/composer/install-composer?tabs=windows
+
 • .NET Core 3.1 SDK (required): https://dotnet.microsoft.com/en-us/download/dotnet/3.1
+
 • Bot Framework Emulator (optional): https://github.com/microsoft/BotFramework-Emulator
+
 
 ## Starting The Chatbot
 Once all the programs are installed, the chatbot can be loaded. To load the files please locate the BigBen.sln
@@ -24,8 +28,11 @@ The bot has been loaded.
 ## Link LUIS
 Now we need to link it to the trained LUIS application.
 Please click on “Configure” -> “Development resources” and enter the following parameters:
+
 • Bot Name
+
 • Your LUIS Authoring KEY
+
 
 # Troubleshooting
 In case the LUIS key is missing, and the bot is loaded, the following errors will appear in the Bot Framework Console:
